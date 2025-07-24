@@ -70,11 +70,9 @@ fun FlickrListItem(
 fun RowScope.RoundedAsyncImage(
 	item: ArcItem
 ) {
-	println("item.media.m = ${item.media.m}")
-	val link = "https://live.staticflickr.com/65535/54213940599_414e0e3ccc_m.jpg"
 	AsyncImage(
 		model = ImageRequest.Builder(LocalContext.current)
-			.data(link)
+			.data(item.media.m)
 			.placeholder(R.drawable.placeholder)
 			.error(R.drawable.placeholder)
 			.build(),
